@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+<table border="1">
+<tr >
+  <th>city</th>
+  <th>theater</th>
+    <th>movie</th>
+  <th>chair_seats</th>
+    <th>balcony_seats</th>
+    <th>seat_no</th>
+</tr>
+{% for rec in records %}
+<tr>
+  <td>{{ rec.city }}</td>
+  <td>{{ rec.theater }}</td>
+    <td>{{ rec.movie }}</td>
+  <td>{{ rec.chair_seats }}</td>
+    <td>{{ rec.balcony_seats }}</td>
+<td>{{ rec.seat_no }}</td>
+</tr>
+{% endfor %}
+</table>
+<form action ="multiply" method="post" >
+    {% csrf_token %}
+    Enter chair_seats:<input type = "text" name="t1"><br>
+    Enter balcony_seats:<input type=text" name="t2"><br>
+    <input type="submit" value="add">
+</form>
+
+
+</body>
+</html>
